@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Counter Project by Dipta Saha</title>
+    <style>
+        body{
+            background: #1bc978;
+        }
+        .main{
+            text-align: center;
+        }
+        .main-content{
+            background: #f0bb0d;
+            width: 250px;
+            margin: 120px auto;
+            border: 2px solid #bbadaa;
+            border-radius: 10px;
+            display: inline-block;
+            padding: 30px;
+            box-shadow: 0px 0px 26px 0px rgba(0,0,0,0.75);
+            -webkit-box-shadow: 0px 0px 26px 0px rgba(0,0,0,0.75);
+            -moz-box-shadow: 0px 0px 26px 0px rgba(0,0,0,0.75);
+        }
+        #edit-text{
+            font-size: 60px;
+            color: #ece8e7;
+        }
+        .main-content button{
+            padding: 5px 10px;
+            margin: 5px;
+            border-radius: 7px;
+            border: 0px;
+            color: #ece8e7;
+            
+
+        }
+        #increase{
+            background-color: #007BFF;
+        }
+        #decrease{
+            background-color: #17A2B8;
+        }
+        #reset{
+            background-color: #DC3545;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="main-content">
+            <h1 id="edit-text">0</h1>
+            <button id="increase" onclick="clickHand('increase')">Increase</button>
+            <button id="decrease" onclick="clickHand('decrease')">Decrease</button>
+            <button id="reset" onclick="clickHand()">Reset</button>
+    
+        </div>
+    </div>
+
+    <script>
+        function clickHand(type){
+            var getStr = document.getElementById('edit-text').innerText;
+            var count = parseInt(getStr);
+            if(type == 'increase'){
+                document.getElementById('edit-text').innerText = ++count;
+
+            }
+            else if(type == 'decrease'){
+                if(!(count <= 0)){
+                    document.getElementById('edit-text').innerText = --count;
+
+                }
+                else{
+                    alert('Value is already 0');
+                }
+            }
+            else{
+                if((count != 0)){
+                    document.getElementById('edit-text').innerText = 0;
+
+                }
+                else{
+                    alert('Value is already 0');
+                }
+                
+            }
+            
+            
+        }
+    </script>
+</body>
+</html>
